@@ -7,34 +7,34 @@
     <title>Daylio</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="px-10 py-10 light:bg-white bg-slate-800 text-white">
+
 <nav class="flex justify-between items-center border-b py-5">
     <a href="/">Home</a>
 
-    <div>
-        @auth
-            <div class="flex gap-4">
-                <x-button-link href="/new-entry">Add Entry</x-button-link>
-                <x-form method="POST" action="/logout">
-                    @csrf
-                    @method('DELETE')
-                    <x-button-primary>Log out</x-button-primary>
-                </x-form>
-            </div>
-        @endauth
+    @auth
+        <div class="flex gap-4">
+            <x-button-link href="/new-entry">Add Entry</x-button-link>
+            <form method="POST" action="/logout">
+                @csrf
+                <x-button-primary>Log out</x-button-primary>
+            </form>
+        </div>
+    @endauth
 
-        @guest
-            <div class="flex gap-4">
-                <x-button-link href="/login"
-                >Log in
-                </x-button-link>
+    @guest
+        <div class="flex gap-4">
+            <x-button-link href="/login"
+            >Log in
+            </x-button-link>
 
-                <x-button-link href="/register">Register</x-button-link>
-            </div>
-        @endguest
-    </div>
+            <x-button-link href="/register">Register</x-button-link>
+        </div>
+    @endguest
+
 </nav>
-<main class="mt-10 mx-auto">
+<main class="mt-10 mx-auto max-w-2xl">
     {{$slot}}
 </main>
 </body>
