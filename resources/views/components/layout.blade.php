@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="px-10 py-10 light:bg-white bg-slate-800 text-white">
+<body class="px-10 py-10 bg-d-background  text-d-text-primary light:bg-l-background  light:text-l-text-primary">
 
 <nav class="flex justify-between items-center border-b py-5">
     <a href="/">Home</a>
