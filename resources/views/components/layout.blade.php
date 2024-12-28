@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="px-10 py-10 bg-d-background  text-d-text-primary light:bg-l-background  light:text-l-text-primary">
+<body class="px-10 py-10 bg-l-background text-l-text-primary dark:bg-d-background  dark:text-d-text-primary  ">
 
 <nav class="flex justify-between items-center border-b py-5">
     <a href="/">Home</a>
@@ -20,6 +20,7 @@
                 @csrf
                 <x-button-primary>Log out</x-button-primary>
             </form>
+            <x-button-link href="/profile">Profile</x-button-link>
         </div>
     @endauth
 
