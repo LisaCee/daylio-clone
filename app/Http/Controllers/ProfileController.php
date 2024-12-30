@@ -33,7 +33,19 @@ class ProfileController extends Controller
             'email' => $request->email,
             'password' => $request->filled('password') ? Hash::make($request->password) : $user['password']
         ]);
-        
+
         return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
+    }
+
+    public function destroy(Request $request)
+    {
+        $user = Auth::user();
+        // @todo Add error handling
+
+        Auth::logout();
+        $request->session()->invalidate();
+
+        $user->delete();
+        return redirect('/');
     }
 }
