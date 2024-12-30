@@ -16,22 +16,22 @@
 
     @auth
         <div class="flex gap-4">
-            <x-button-link href="/new-entry">Add Entry</x-button-link>
-            <x-button-link href="/profile">Profile</x-button-link>
+            <x-buttons.primary href="/new-entry">Add Entry</x-buttons.primary>
+            <x-buttons.primary href="/profile">Profile</x-buttons.primary>
             <form method="POST" action="/logout">
                 @csrf
-                <x-button-primary>Log out</x-button-primary>
+                <x-buttons.primary>Log out</x-buttons.primary>
             </form>
         </div>
     @endauth
 
     @guest
         <div class="flex gap-4">
-            <x-button-link href="/login"
+            <x-buttons.primary href="/login"
             >Log in
-            </x-button-link>
+            </x-buttons.primary>
 
-            <x-button-link href="/register">Register</x-button-link>
+            <x-buttons.primary href="/register">Register</x-buttons.primary>
         </div>
     @endguest
 

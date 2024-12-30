@@ -10,6 +10,6 @@
 
         <x-forms.input label="Confirm Password" name="password_confirmation" type="password"/>
 
-        <x-button-primary>Create Account</x-button-primary>
+        <x-buttons.primary>Create Account</x-buttons.primary>
     </x-forms.form>
 </x-layout>

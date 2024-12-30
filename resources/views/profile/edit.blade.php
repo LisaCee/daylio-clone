@@ -9,6 +9,6 @@
 
         <x-forms.input label="Confirm New Password" name="password_confirmation" type="password"/>
 
-        <x-button-primary>Update Account</x-button-primary>
+        <x-buttons.primary>Update Account</x-buttons.primary>
     </x-forms.form>
 </x-layout>
