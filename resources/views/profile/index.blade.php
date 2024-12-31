@@ -17,6 +17,7 @@
         <form method="POST" action="{{route('profile.destroy')}}">
             @csrf
             @method('DELETE')
+            {{--            @todo Add confirmation modal--}}
             <x-buttons.destructive>Delete Account</x-buttons.destructive>
         </form>
     </div>
