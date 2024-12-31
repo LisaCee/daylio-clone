@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -9,10 +10,17 @@ Route::get('/', function () {
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('/register', [ RegisteredUserController::class, 'create' ]);
-    Route::post('/register', [ RegisteredUserController::class, 'store' ]);
-    Route::get('/login', [ SessionController::class, 'create' ]);
-    Route::post('/login', [ SessionController::class, 'store' ]);
+    Route::get('/register', [RegisteredUserController::class, 'create']);
+    Route::post('/register', [RegisteredUserController::class, 'store']);
+    Route::get('/login', [SessionController::class, 'create']);
+    Route::post('/login', [SessionController::class, 'store']);
 });
 
-Route::post('/logout', [ SessionController::class, 'logout' ]);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'get'])->name('profile.index');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::post('/logout', [SessionController::class, 'logout']);
