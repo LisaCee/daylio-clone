@@ -16,7 +16,7 @@
 
     @auth
         <div class="flex gap-4">
-            <x-buttons.primary href="/new-entry">Add Entry</x-buttons.primary>
+            <x-buttons.primary href="/entries/create">Add Entry</x-buttons.primary>
             <x-buttons.primary href="/profile">Profile</x-buttons.primary>
             <form method="POST" action="/logout">
                 @csrf
