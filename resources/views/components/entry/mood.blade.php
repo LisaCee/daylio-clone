@@ -1,7 +1,7 @@
 @props(['mood_level'])
 
 <div>
-    <div class="flex flex-row align-middle">
+    <div class="flex flex-row gap-2 items-center">
         <label for={{get_label($mood_level)}}>
             @switch($mood_level)
                 @case(0)
@@ -22,6 +22,6 @@
                     @break
             @endswitch
         </label>
-        <p class="text-{{get_color($mood_level)}} align-middle">{{get_label($mood_level)}}</p>
+        <p class="text-{{get_color($mood_level)}} align-middle font-bold size-lg">{{get_label($mood_level)}}</p>
     </div>
 </div>
