@@ -1,6 +1,6 @@
 <?php
 
-function get_color($mood_level): string
+function get_color(int $mood_level): string
 {
     return match ($mood_level) {
         0 => 'accent-gray',
@@ -11,4 +11,17 @@ function get_color($mood_level): string
         default => '',
     };
 }
+
+function get_label(int $mood_level): string
+{
+    return match ($mood_level) {
+        0 => 'Bad',
+        1 => 'Poor',
+        2 => 'Meh',
+        3 => 'Good',
+        4 => 'Great',
+        default => '',
+    };
+}
+
 

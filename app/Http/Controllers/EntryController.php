@@ -9,7 +9,7 @@ class EntryController extends Controller
 {
     public function index()
     {
-        $entries = auth()->user()->entries;
+        $entries = auth()->user()->entries ?? [];
 
         return view('entry.index', ['entries' => $entries]);
     }
