@@ -11,7 +11,7 @@
 
 <body class="px-10 py-10 bg-l-background text-l-text-primary dark:bg-d-background  dark:text-d-text-primary  ">
 
-<nav class="flex justify-between items-center border-b py-5">
+<nav class="flex justify-between items-center border-b py-5 border-l-border dark:border-d-border">
     <a href="/">Home</a>
 
     @auth

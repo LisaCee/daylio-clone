@@ -5,24 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Entry extends Model
+class Activity extends Model
 {
     /** @use HasFactory<\Database\Factories\EntryFactory> */
     use HasFactory;
 
-    protected $fillable = [
-        'mood_level',
-    ];
+    protected $fillable = ['name'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function activities(): HasMany
+    public function entry(): BelongsTo
     {
-        return $this->hasMany(Activity::class);
+        return $this->belongsTo(Entry::class);
     }
 }
