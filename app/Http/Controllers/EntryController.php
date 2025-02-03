@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class EntryController extends Controller
@@ -27,9 +28,11 @@ class EntryController extends Controller
         $data = $request->validate([
             'mood_level' => 'required',
             'activities' => 'nullable|array',
+            'activities.*' => 'exists:activities,id',
         ]);
 
-        Auth::user()->entries()->create($data);
+        $entry = Auth::user()->entries()->create(Arr::except($data, 'activities'));
+        $entry->activities()->sync($data['activities'] ?? []);
         return redirect('/');
     }
 

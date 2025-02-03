@@ -1,7 +1,7 @@
 @props(['entries'])
 
 <x-layout>
-    <div class="flex gap-4">
+    <div class="flex gap-4 flex-wrap mx-auto">
         {{--        @todo Group entries by date--}}
         @if (count($entries) > 0)
             @foreach($entries as $entry)

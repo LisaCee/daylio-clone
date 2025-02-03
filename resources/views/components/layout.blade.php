@@ -36,7 +36,7 @@
     @endguest
 
 </nav>
-<main class="mt-10 mx-auto max-w-2xl">
+<main class="mt-10 mx-auto max-w-5xl justify-center">
     {{$slot}}
 </main>
 </body>

@@ -5,7 +5,7 @@ $date = new DateTime($iso_date);
 $mood_level = $entry->mood_level;
 $color = get_color($mood_level);
 ?>
-<div class="flex flex-col bg-l-surface dark:bg-d-surface rounded-lg">
+<div class="flex flex-col bg-l-surface dark:bg-d-surface rounded-lg min-w-md">
     <div class="bg-{{$color}}/40 bg-opacity-100 px-6 py-2 rounded-t-lg">
         <p class="dark:text-{{$color}}-dark text-xs">{{Str::upper($date->format('D, M j'))}}</p>
     </div>

@@ -23,6 +23,6 @@ class Entry extends Model
 
     public function activities(): BelongsToMany
     {
-        return $this->belongsToMany(Activity::class);
+        return $this->belongsToMany(Activity::class, foreignPivotKey: 'activity_id');
     }
 }
