@@ -14,6 +14,7 @@ class Entry extends Model
 
     protected $fillable = [
         'mood_level',
+        'user_id'
     ];
 
     public function user(): BelongsTo
@@ -21,8 +22,14 @@ class Entry extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function activity(string $name): void
+    {
+        $activity = Activity::firstOrCreate(['name' => $name]);
+        $this->activities()->sync($activity);
+    }
+
     public function activities(): BelongsToMany
     {
-        return $this->belongsToMany(Activity::class, foreignPivotKey: 'activity_id');
+        return $this->belongsToMany(Activity::class, 'activity_entry');
     }
 }
