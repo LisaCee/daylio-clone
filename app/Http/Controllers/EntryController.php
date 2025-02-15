@@ -12,7 +12,7 @@ class EntryController extends Controller
 {
     public function index()
     {
-        $entries = Auth::user()->entries()->with('activities')->get();
+        $entries = Auth::user()?->entries()->with('activities')->get() ?? [];
 
         return view('entry.index', ['entries' => $entries]);
     }

@@ -1,7 +1,8 @@
 @props(['entries'])
 
 <x-layout>
-    <div class="flex gap-4 flex-wrap mx-auto">
+    <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 grid-rows[auto] auto-rows-fr items-stretch gap-3 flex-wrap justify-center mx-auto">
         {{--        @todo Group entries by date--}}
         @if (count($entries) > 0)
             @foreach($entries as $entry)
