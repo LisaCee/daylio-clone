@@ -11,7 +11,7 @@
 
 <body class="px-10 py-10 bg-l-background text-l-text-primary dark:bg-d-background  dark:text-d-text-primary  ">
 
-<nav class="flex justify-between items-center border-b py-5">
+<nav class="flex justify-between items-center border-b py-5 border-l-border dark:border-d-border">
     <a href="/">Home</a>
 
     @auth
@@ -36,7 +36,7 @@
     @endguest
 
 </nav>
-<main class="mt-10 mx-auto max-w-2xl">
+<main class="mt-10 mx-auto max-w-5xl justify-center">
     {{$slot}}
 </main>
 </body>
