@@ -3,6 +3,7 @@
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/entries', [EntryController::class, 'index'])->name('entry.index');
     Route::get('/entries/create', [EntryController::class, 'create'])->name('entry.create');
     Route::post('/entries', [EntryController::class, 'store'])->name('entry.store');
+
+    Route::get('/reports/weekly', [ReportController::class, 'weeklyMoodReport'])->name('report.weekly');
 });
 
 Route::post('/logout', [SessionController::class, 'logout']);
