@@ -3,7 +3,7 @@
 <div>
     <div class="flex flex-row gap-2 items-center">
         <label for={{get_label($mood_level)}}>
-            @switch($mood_level)
+            @switch(round($mood_level))
                 @case(0)
                     <x-far-face-tired alt="{{get_label($mood_level)}}" class="h-8 text-{{get_color($mood_level)}}"/>
                     @break
@@ -20,6 +20,8 @@
                     <x-far-face-laugh-beam alt="{{get_label($mood_level)}}"
                                            class="h-8 text-{{get_color($mood_level)}}"/>
                     @break
+                @default
+                    @break;
             @endswitch
         </label>
         <p class="text-{{get_color($mood_level)}} align-middle font-bold size-lg">{{get_label($mood_level)}}</p>
