@@ -30,6 +30,6 @@ class Entry extends Model
 
     public function activities(): BelongsToMany
     {
-        return $this->belongsToMany(Activity::class, 'activity_entry');
+        return $this->belongsToMany(Activity::class, 'activity_entry')->withPivot('created_at', 'updated_at');
     }
 }
