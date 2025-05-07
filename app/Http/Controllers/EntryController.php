@@ -33,7 +33,7 @@ class EntryController extends Controller
         ]);
 
         $entry = Auth::user()->entries()->create(Arr::except($data, 'activities'));
-        $entry->activities()->sync($data['activities']);
+        $entry->activities()->sync($data['activities'] ?? []);
         Log::debug(response()->json(['message' => 'Entry created successfully', 'entry' => $entry->load('activities')]));
 
         return redirect('/');
